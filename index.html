@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybrlytics</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional inline styles for the specific hover effect */
+        .card {
+            background-color: #005B94;
+            color: black;
+            transition: transform 0.3s ease-out;
+            cursor: pointer;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .card img {
+            max-width: 50px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Cybrlytics Logo.GIF" alt="Cybrlytics Company Logo" id="logo" loading="lazy">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="collaborate.html">Collaborate</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="hero">
+        <div class="hero-text">
+            <div class="hero-3d-text">
+                <h2 id="hero-title"></h2>
+                <p id="hero-subtitle"></p>
+            </div>
+            <button onclick="scrollToSection('about')" aria-label="Learn more about Cybrlytics">Learn More</button>
+        </div>
+        <div class="hero-image">
+            <img src="heroX.gif" alt="Hero Image">
+        </div>
+    </section>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Cybrlytics is a leading provider of cybersecurity and data analytics solutions. We specialize in Industry 4.0 solutions, SAP services, Lean Six Sigma, and Enabler Services.</p>
+    </section>
+    <footer>
+        <p>&copy; 2024 Cybrlytics. All rights reserved.</p>
+    </footer>
+    
+    <script src="scripts.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'YOUR_TRACKING_ID');
+    </script>
+</body>
+</html>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const logo = document.getElementById('logo');
+    const heroTitle = document.getElementById('hero-title');
+    const heroSubtitle = document.getElementById('hero-subtitle');
+
+    // Logo rotation on hover
+    logo.addEventListener('mouseover', function() {
+        logo.style.transition = 'transform 0.5s';
+        logo.style.transform = 'rotate(360deg)';
+    });
+    logo.addEventListener('mouseout', function() {
+        logo.style.transition = 'transform 0.5s';
+        logo.style.transform = 'rotate(0deg)';
+    });
+
+});
+
+function typeWriterEffect(element, text, speed) {
+    let i = 0;
+    element.innerHTML = '';  // Clear the element's content before starting the typewriter effect
+    function type() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        }
+    }
+    type();
+}
+
+function scrollToSection(sectionId) {
+    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+}
+
+function validateForm() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    if (name === "" || email === "" || message === "") {
+        alert("All fields must be filled out");
+        return false;
+    }
+    return true;
+}
+</script>

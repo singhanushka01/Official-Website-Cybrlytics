@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How We Can Help You - Cybrlytics</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles specific to help section can be added here if needed */
+        .card {
+            background-color: rgb(237, 232, 232);
+            color: black;
+            transition: transform 0.3s ease-out;
+            cursor: pointer;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .card img {
+            max-width: 50px;
+            margin-bottom: 10px;
+        }
+
+        .help-carousel {
+            display: flex;
+            overflow: hidden;
+        }
+
+        .carousel-prev, .carousel-next {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Cybrlytics Logo.GIF" alt="Cybrlytics Company Logo" id="logo" loading="lazy">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="collaborate.html">Collaborate</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="help">
+        <h2>How We Can Help You</h2>
+        <div class="help-carousel" id="help-carousel">
+            <!-- Carousel items will be dynamically loaded -->
+            <div class="card help-item">
+                <img src="settings.gif" alt="Innovation icon">
+                <h2>Innovation Consulting</h2>
+                <p>We provide innovative consulting solutions tailored to your business needs.</p>
+            </div>
+            <div class="card help-item">
+                <img src="fireworks.gif" alt="Artificial Intelligence icon">
+                <h2>Artificial Intelligence</h2>
+                <p>Integrate advanced AI solutions to streamline operations and enhance decision-making.</p>
+            </div>
+            <div class="card help-item">
+                <img src="checklist.gif" alt="Software Engineering icon">
+                <h2>Software Engineering</h2>
+                <p>Develop robust software solutions customized to meet your specific requirements.</p>
+            </div>
+            <div class="card help-item">
+                <img src="idea.gif" alt="Data & Analytics icon">
+                <h2>Data & Analytics</h2>
+                <p>Analyze data to gain actionable insights that drive business growth and efficiency.</p>
+            </div>
+            <div class="card help-item">
+                <img src="copy.gif" alt="Digital Transformation icon">
+                <h2>Digital Transformation</h2>
+                <p>Transform your business processes and customer experiences with digital innovations.</p>
+            </div>
+            <div class="card help-item">
+                <img src="diagram.gif" alt="Extended Reality icon">
+                <h2>Extended Reality</h2>
+                <p>Implement immersive XR solutions for training, visualization, and customer engagement.</p>
+            </div>
+        </div>
+        <button class="carousel-prev" onclick="prevItem()">&#8249;</button>
+        <button class="carousel-next" onclick="nextItem()">&#8250;</button>
+    </section>
+    <footer>
+        <p>&copy; 2024 Cybrlytics. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const helpItems = document.querySelectorAll('.help-item');
+
+            // Dynamically load help items
+            const helpItemsData = [
+                { img: 'settings.gif', title: 'Innovation Consulting' },
+                { img: 'fireworks.gif', title: 'Artificial Intelligence' },
+                { img: 'checklist.gif', title: 'Software Engineering' },
+                { img: 'idea.gif', title: 'Data & Analytics' },
+                { img: 'copy.gif', title: 'Digital Transformation' },
+                { img: 'globe.gif', title: 'Globally Collaborate' },
+                { img: 'time.gif', title: 'Timely Update' },
+                { img: 'diagram.gif', title: 'Extended Reality' }
+            ];
+
+            helpItems.forEach((item, index) => {
+                const data = helpItemsData[index];
+                item.innerHTML = `
+                    <img src="${data.img}" alt="${data.title}">
+                    <h3>${data.title}</h3>
+                `;
+            });
+
+            // Carousel functionality
+            let currentIndex = 0;
+            const totalItems = helpItems.length;
+
+            function showItems(index) {
+                helpItems.forEach((item, i) => {
+                    item.style.display = (i >= index && i < index + 3) ? 'block' : 'none';
+                });
+            }
+
+            function prevItem() {
+                currentIndex = (currentIndex - 3 + totalItems) % totalItems;
+                showItems(currentIndex);
+            }
+
+            function nextItem() {
+                currentIndex = (currentIndex + 3) % totalItems;
+                showItems(currentIndex);
+            }
+
+            // Initial display
+            showItems(currentIndex);
+
+            window.prevItem = prevItem;
+            window.nextItem = nextItem;
+        });
+    </script>
+</body>
+</html>

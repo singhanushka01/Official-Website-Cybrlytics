@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybrlytics</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional inline styles for the specific hover effect */
+        .card {
+            background-color: #005B94;
+            color: black;
+            transition: transform 0.3s ease-out;
+            cursor: pointer;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .card img {
+            max-width: 50px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Cybrlytics Logo.GIF" alt="Cybrlytics Company Logo" id="logo" loading="lazy">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="collaborate.html">Collaborate</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="collaborate">
+        <h2>How We Collaborate With You</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="think.gif" alt="Thinking big icon">
+                <h2>Thinking big</h2>
+                <p>After digging deep to understand holistically your challenges and business objectives, we chart your technology path that will keep your business future-proof.</p>
+            </div>
+            <div class="card">
+                <img src="start.gif" alt="Starting small icon">
+                <h2>Starting small</h2>
+                <p>At the beginning of the transformation journey, we start with simple use cases that bring you immediate results.</p>
+            </div>
+            <div class="card">
+                <img src="create.gif" alt="Creating value fast icon">
+                <h2>Creating value fast</h2>
+                <p>We then build an MVP, testing the first use cases and collecting feedback. Along the way, we introduce enhancements to align business deliverables and add new use cases.</p>
+            </div>
+            <div class="card">
+                <img src="innovation.gif" alt="Innovating at scale icon">
+                <h2>Innovating at scale</h2>
+                <p>We are expanding the functionality of your system, keeping it flexible on the tech stack, hugely adaptable to humans, and easily scalable to evolve along with your business growth.</p>
+            </div>
+            <div class="card">
+                <img src="globe.gif" alt="Globally Collaborate">
+                <h2>Globally Collaborate</h2>
+                <p>Your company can use my advanced language processing to automate customer support, boosting efficiency and satisfaction.</p>
+            </div>
+            <div class="card">
+                <img src="time.gif" alt="Innovating at scale icon">
+                <h2>Timely Update</h2>
+                <p>Your company can use my advanced language processing to automate customer support, ensuring timely updates and improved efficiency.</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Cybrlytics. All rights reserved.</p>
+    </footer>
+    
+    <script src="scripts.js"></script>s
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'YOUR_TRACKING_ID');
+    </script>
